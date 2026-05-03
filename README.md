@@ -1,2 +1,2 @@
-# demo purpose
-test
+# MedAI application
+
