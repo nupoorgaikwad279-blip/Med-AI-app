@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Information - MedAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .profile-card {
+            width: 100%;
+            max-width: 600px;
+            padding: 3rem;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 600px) {
+            .form-grid { grid-template-columns: 1fr; }
+        }
+        .full-width { grid-column: 1 / -1; }
+        
+        .input-group label {
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            font-size: 1rem;
+            color: white;
+            transition: all 0.3s;
+        }
+        .input-group input:focus, .input-group select:focus {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1);
+            outline: none;
+        }
+        .input-group select option {
+            background: #1e293b;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-card glass">
+            <h2 style="background: var(--gradient-premium); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;"><i class="fa-solid fa-user-doctor"></i> Patient Profile</h2>
+            <p style="color: var(--text-muted); margin-top: 5px;">Complete your clinical profile to continue.</p>
+            
+            <form action="/profile" method="POST">
+                <div class="form-grid">
+                    <div class="input-group full-width">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" value="{{ profile.get('name', '') }}" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" placeholder="25" value="{{ profile.get('age', '') }}" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="" disabled {% if not profile.get('gender') %}selected{% endif %}>Select</option>
+                            <option value="Male" {% if profile.get('gender') == 'Male' %}selected{% endif %}>Male</option>
+                            <option value="Female" {% if profile.get('gender') == 'Female' %}selected{% endif %}>Female</option>
+                            <option value="Other" {% if profile.get('gender') == 'Other' %}selected{% endif %}>Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="blood_type">Blood Group</label>
+                        <select id="blood_type" name="blood_type" required>
+                            <option value="" disabled {% if not profile.get('blood_type') %}selected{% endif %}>Type</option>
+                            <option value="A+" {% if profile.get('blood_type') == 'A+' %}selected{% endif %}>A+</option>
+                            <option value="A-" {% if profile.get('blood_type') == 'A-' %}selected{% endif %}>A-</option>
+                            <option value="B+" {% if profile.get('blood_type') == 'B+' %}selected{% endif %}>B+</option>
+                            <option value="B-" {% if profile.get('blood_type') == 'B-' %}selected{% endif %}>B-</option>
+                            <option value="AB+" {% if profile.get('blood_type') == 'AB+' %}selected{% endif %}>AB+</option>
+                            <option value="AB-" {% if profile.get('blood_type') == 'AB-' %}selected{% endif %}>AB-</option>
+                            <option value="O+" {% if profile.get('blood_type') == 'O+' %}selected{% endif %}>O+</option>
+                            <option value="O-" {% if profile.get('blood_type') == 'O-' %}selected{% endif %}>O-</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="occupation">Occupation</label>
+                        <input type="text" id="occupation" name="occupation" placeholder="Healthcare Professional" value="{{ profile.get('occupation', '') }}" required>
+                    </div>
+                    
+                    <div class="input-group full-width">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="patient@medai.com" value="{{ profile.get('email', '') }}" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn" style="margin-top: 2rem;">Initialize Dashboard <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

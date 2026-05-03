@@ -1,0 +1,239 @@
+2026-04-24 12:21:08,545 - INFO - MedAI Watchdog started.
+2026-04-24 12:21:08,545 - INFO - Attempting to start MedAI Server...
+2026-04-24 12:21:08,560 - INFO - MedAI Server started with PID: 201724
+2026-04-24 12:55:04,611 - INFO - MedAI Watchdog started.
+2026-04-24 12:55:04,611 - INFO - Attempting to start MedAI Server...
+2026-04-24 12:55:04,617 - INFO - MedAI Server started with PID: 117676
+2026-04-24 15:52:23,350 - INFO - MedAI Watchdog started.
+2026-04-24 15:52:23,351 - INFO - Attempting to start MedAI Server...
+2026-04-24 15:52:23,364 - INFO - MedAI Server started with PID: 223396
+2026-04-24 16:24:23,597 - ERROR - MedAI Server stopped. Error output: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+Press CTRL+C to quit
+127.0.0.1 - - [24/Apr/2026 15:52:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:52:33] "GET /static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:52:33] "GET /static/qrcode.png HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:52:33] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:52:33] "GET /service-worker.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:52:33] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 15:52:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:52:33] "GET /offline HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:52:33] "GET /static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [24/Apr/2026 15:52:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:52:33] "GET /static/script.js HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:53:06] "POST /signup HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:53:07] "GET /manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [24/Apr/2026 15:53:07] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 15:53:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:53:08] "GET /service-worker.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Apr/2026 15:53:32] "POST / HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 15:53:32] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:53:32] "GET /manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [24/Apr/2026 15:53:32] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 15:53:33] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 15:53:33] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:53:34] "GET /service-worker.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Apr/2026 15:53:49] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 15:53:49] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 15:53:49] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:54:27] "GET /logout HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 15:54:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:54:27] "GET /static/qrcode.png HTTP/1.1" 304 -
+127.0.0.1 - - [24/Apr/2026 15:54:27] "GET /manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [24/Apr/2026 15:54:27] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 15:54:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 15:54:28] "GET /service-worker.js HTTP/1.1" 304 -
+192.168.1.2 - - [24/Apr/2026 15:54:42] "GET / HTTP/1.1" 200 -
+192.168.1.2 - - [24/Apr/2026 15:54:42] "GET /static/style.css HTTP/1.1" 200 -
+192.168.1.2 - - [24/Apr/2026 15:54:42] "GET /static/qrcode.png HTTP/1.1" 200 -
+192.168.1.2 - - [24/Apr/2026 15:54:43] "GET /favicon.ico HTTP/1.1" 302 -
+192.168.1.2 - - [24/Apr/2026 15:54:43] "GET / HTTP/1.1" 200 -
+192.168.1.2 - - [24/Apr/2026 15:55:01] "POST / HTTP/1.1" 200 -
+192.168.1.2 - - [24/Apr/2026 15:55:01] "GET /static/style.css HTTP/1.1" 304 -
+192.168.1.2 - - [24/Apr/2026 15:55:01] "GET /favicon.ico HTTP/1.1" 302 -
+192.168.1.2 - - [24/Apr/2026 15:55:01] "GET / HTTP/1.1" 200 -
+192.168.1.2 - - [24/Apr/2026 15:55:24] "POST / HTTP/1.1" 200 -
+192.168.1.2 - - [24/Apr/2026 15:55:24] "GET /static/style.css HTTP/1.1" 304 -
+192.168.1.2 - - [24/Apr/2026 15:55:24] "GET /favicon.ico HTTP/1.1" 302 -
+192.168.1.2 - - [24/Apr/2026 15:55:24] "GET / HTTP/1.1" 200 -
+192.168.1.2 - - [24/Apr/2026 15:55:38] "POST / HTTP/1.1" 302 -
+192.168.1.2 - - [24/Apr/2026 15:55:38] "GET /profile HTTP/1.1" 200 -
+192.168.1.2 - - [24/Apr/2026 15:55:38] "GET /static/style.css HTTP/1.1" 304 -
+192.168.1.2 - - [24/Apr/2026 15:55:38] "GET /favicon.ico HTTP/1.1" 302 -
+192.168.1.2 - - [24/Apr/2026 15:55:38] "GET / HTTP/1.1" 302 -
+192.168.1.2 - - [24/Apr/2026 15:55:38] "GET /profile HTTP/1.1" 200 -
+192.168.1.2 - - [24/Apr/2026 15:56:05] "POST /profile HTTP/1.1" 302 -
+192.168.1.2 - - [24/Apr/2026 15:56:05] "GET /dashboard HTTP/1.1" 200 -
+
+2026-04-24 16:24:23,598 - INFO - Restarting in 5 seconds...
+2026-04-24 16:24:28,038 - INFO - MedAI Watchdog started.
+2026-04-24 16:24:28,038 - INFO - Attempting to start MedAI Server...
+2026-04-24 16:24:28,048 - INFO - MedAI Server started with PID: 111260
+2026-04-24 16:24:28,599 - INFO - Attempting to start MedAI Server...
+2026-04-24 16:24:28,606 - INFO - MedAI Server started with PID: 30484
+2026-04-24 16:35:18,084 - ERROR - MedAI Server stopped. Error output: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+Press CTRL+C to quit
+127.0.0.1 - - [24/Apr/2026 16:24:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:24:48] "GET /static/qrcode.png HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:24:48] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 16:24:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:24:48] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:24:50] "GET /service-worker.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Apr/2026 16:28:45] "POST /signup HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:28:45] "GET /manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [24/Apr/2026 16:28:45] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 16:28:45] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:28:46] "GET /service-worker.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Apr/2026 16:29:22] "POST / HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 16:29:22] "GET /profile HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:29:22] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 16:29:22] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 16:29:22] "GET /profile HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:29:24] "GET /service-worker.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Apr/2026 16:30:04] "POST /profile HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 16:30:04] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:30:04] "GET /manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [24/Apr/2026 16:30:05] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 16:30:05] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [24/Apr/2026 16:30:05] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:30:06] "GET /service-worker.js HTTP/1.1" 304 -
+127.0.0.1 - - [24/Apr/2026 16:30:23] "GET /history HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:31:29] "POST /upload HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:31:29] "GET /get_columns HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:31:29] "GET /viz_data HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:31:39] "POST /process HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:31:39] "GET /viz_data HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:31:44] "POST /train HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:31:48] "GET /viz_data HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:32:14] "POST /viz_column HTTP/1.1" 200 -
+127.0.0.1 - - [24/Apr/2026 16:33:10] "POST /chat HTTP/1.1" 200 -
+
+2026-04-24 16:35:18,084 - INFO - Restarting in 5 seconds...
+2026-04-24 16:35:18,642 - ERROR - MedAI Server stopped. Error output: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+Press CTRL+C to quit
+
+2026-04-24 16:35:18,642 - INFO - Restarting in 5 seconds...
+2026-04-25 00:25:02,560 - INFO - MedAI Watchdog started.
+2026-04-25 00:25:02,560 - INFO - Attempting to start MedAI Server...
+2026-04-25 00:25:02,569 - INFO - MedAI Server started with PID: 193788
+2026-04-25 00:25:40,177 - INFO - MedAI Watchdog started.
+2026-04-25 00:25:40,177 - INFO - Attempting to start MedAI Server...
+2026-04-25 00:25:40,187 - INFO - MedAI Server started with PID: 26244
+2026-04-25 00:25:42,572 - ERROR - MedAI Server stopped. Error output: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+Press CTRL+C to quit
+127.0.0.1 - - [25/Apr/2026 00:25:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 00:25:14] "GET /manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [25/Apr/2026 00:25:14] "GET /static/qrcode.png HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 00:25:14] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [25/Apr/2026 00:25:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 00:25:15] "GET /service-worker.js HTTP/1.1" 304 -
+127.0.0.1 - - [25/Apr/2026 00:25:20] "POST / HTTP/1.1" 302 -
+127.0.0.1 - - [25/Apr/2026 00:25:20] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 00:25:20] "GET /manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [25/Apr/2026 00:25:20] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [25/Apr/2026 00:25:20] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [25/Apr/2026 00:25:20] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 00:25:22] "GET /service-worker.js HTTP/1.1" 304 -
+
+2026-04-25 00:25:42,572 - INFO - Restarting in 5 seconds...
+2026-04-25 00:25:47,573 - INFO - Attempting to start MedAI Server...
+2026-04-25 00:25:47,590 - INFO - MedAI Server started with PID: 159620
+2026-04-25 02:04:10,327 - INFO - MedAI Watchdog started.
+2026-04-25 02:04:10,327 - INFO - Attempting to start MedAI Server...
+2026-04-25 02:04:10,338 - INFO - MedAI Server started with PID: 182904
+2026-04-25 02:04:10,496 - ERROR - MedAI Server stopped. Error output: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+Press CTRL+C to quit
+127.0.0.1 - - [25/Apr/2026 00:25:59] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [25/Apr/2026 00:25:59] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 00:25:59] "GET /manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [25/Apr/2026 00:26:00] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [25/Apr/2026 00:26:00] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [25/Apr/2026 00:26:00] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 00:26:01] "GET /service-worker.js HTTP/1.1" 304 -
+
+2026-04-25 02:04:10,498 - INFO - Restarting in 5 seconds...
+2026-04-25 02:04:15,498 - INFO - Attempting to start MedAI Server...
+2026-04-25 02:04:15,509 - INFO - MedAI Server started with PID: 176000
+2026-04-25 02:04:17,877 - ERROR - MedAI Server stopped. Error output: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+Press CTRL+C to quit
+
+2026-04-25 02:04:17,879 - INFO - Restarting in 5 seconds...
+2026-04-25 02:04:22,880 - INFO - Attempting to start MedAI Server...
+2026-04-25 02:04:22,891 - INFO - MedAI Server started with PID: 150580
+2026-04-25 03:07:40,514 - ERROR - MedAI Server stopped. Error output: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+Press CTRL+C to quit
+127.0.0.1 - - [25/Apr/2026 02:04:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 02:04:14] "GET /static/qrcode.png HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 02:04:14] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [25/Apr/2026 02:04:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 02:04:14] "GET /manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [25/Apr/2026 02:04:16] "GET /service-worker.js HTTP/1.1" 304 -
+127.0.0.1 - - [25/Apr/2026 02:07:03] "POST / HTTP/1.1" 302 -
+127.0.0.1 - - [25/Apr/2026 02:07:03] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 02:07:03] "GET /manifest.json HTTP/1.1" 304 -
+127.0.0.1 - - [25/Apr/2026 02:07:03] "GET /favicon.ico HTTP/1.1" 302 -
+127.0.0.1 - - [25/Apr/2026 02:07:03] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [25/Apr/2026 02:07:03] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 02:07:05] "GET /service-worker.js HTTP/1.1" 304 -
+127.0.0.1 - - [25/Apr/2026 02:08:57] "POST /upload HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 02:08:57] "GET /get_columns HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 02:08:57] "GET /viz_data HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 02:10:28] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 02:11:39] "GET /history HTTP/1.1" 200 -
+
+2026-04-25 03:07:40,516 - INFO - Restarting in 5 seconds...
+2026-04-25 03:07:40,572 - INFO - MedAI Watchdog started.
+2026-04-25 03:07:40,572 - INFO - Attempting to start MedAI Server...
+2026-04-25 03:07:40,579 - INFO - MedAI Server started with PID: 160564
+2026-04-25 03:07:43,057 - ERROR - MedAI Server stopped. Error output: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+Press CTRL+C to quit
+
+2026-04-25 03:07:43,059 - INFO - Restarting in 5 seconds...
+2026-04-25 03:07:45,517 - INFO - Attempting to start MedAI Server...
+2026-04-25 03:07:45,524 - INFO - MedAI Server started with PID: 198348
+2026-04-25 03:07:45,684 - ERROR - MedAI Server stopped. Error output: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+Press CTRL+C to quit
+
+2026-04-25 03:07:45,685 - INFO - Restarting in 5 seconds...
+2026-04-25 03:07:48,059 - INFO - Attempting to start MedAI Server...
+2026-04-25 03:07:48,067 - INFO - MedAI Server started with PID: 96348
+2026-04-25 03:07:50,685 - INFO - Attempting to start MedAI Server...
+2026-04-25 03:07:50,692 - INFO - MedAI Server started with PID: 164128
+2026-04-27 10:30:42,544 - INFO - MedAI Watchdog started.
+2026-04-27 10:30:42,544 - INFO - Attempting to start MedAI Server...
+2026-04-27 10:30:42,555 - INFO - MedAI Server started with PID: 68240
+2026-04-30 15:14:16,369 - INFO - MedAI Watchdog started.
+2026-04-30 15:14:16,369 - INFO - Attempting to start MedAI Server...
+2026-04-30 15:14:16,376 - INFO - MedAI Server started with PID: 71912
+2026-05-01 13:23:22,878 - INFO - MedAI Watchdog started.
+2026-05-01 13:23:22,879 - INFO - Attempting to start MedAI Server...
+2026-05-01 13:23:22,887 - INFO - MedAI Server started with PID: 167696
+2026-05-03 18:00:04,915 - INFO - MedAI Watchdog started.
+2026-05-03 18:00:04,915 - INFO - Attempting to start MedAI Server...
+2026-05-03 18:00:04,924 - INFO - MedAI Server started with PID: 200096

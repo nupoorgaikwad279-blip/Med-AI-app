@@ -1,0 +1,24 @@
+{
+  "name": "MedAI Healthcare Analytics",
+  "short_name": "MedAI Pro",
+  "description": "Professional AI-powered healthcare data analysis and patient management system.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8faff",
+  "theme_color": "#0077b6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3063/3063176.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3063/3063176.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

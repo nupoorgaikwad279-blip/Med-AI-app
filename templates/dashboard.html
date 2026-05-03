@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI HealthCare Analytics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0077b6">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast"></div>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header" style="display: flex; align-items: center; gap: 10px; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 1.5rem;">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height: 32px;">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#fff" stroke-width="5" />
+                    <path d="M50 25 V75 M35 50 H65" stroke="#fff" stroke-width="10" stroke-linecap="round" />
+                    <path d="M25 50 L40 50 L45 30 L55 70 L60 50 L75 50" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span style="font-size: 1.5rem; font-weight: 800; letter-spacing: 1px;">MedAI</span>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="#" class="active" onclick="showSection('dashboard-content')"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></a></li>
+                <li><a href="#upload-section" onclick="showSection('dashboard-content')"><i class="fa-solid fa-upload"></i> <span>Upload Data</span></a></li>
+                <li><a href="#charts-section" onclick="showSection('dashboard-content')"><i class="fa-solid fa-chart-line"></i> <span>Analytics</span></a></li>
+                <li><a href="#" onclick="showSection('records-content')"><i class="fa-solid fa-folder-open"></i> <span>Past Records</span></a></li>
+                <li><a href="#chat-section" onclick="showSection('dashboard-content')"><i class="fa-solid fa-robot"></i> <span>AI Chat</span></a></li>
+                <li id="install-li" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 10px; padding-top: 10px;">
+                    <a href="#" onclick="installPWA()" title="Install App to Desktop/Home Screen">
+                        <i class="fa-solid fa-download"></i> <span>Install App</span>
+                    </a>
+                </li>
+            </ul>
+            <a href="/logout" class="btn logout-btn"><i class="fa-solid fa-sign-out-alt"></i> Logout</a>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <button class="toggle-sidebar-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+                        <h1 style="margin: 0; font-weight: 800; background: var(--gradient-premium); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">MedAI Dashboard</h1>
+                    </div>
+                    <p style="color: var(--text-muted); margin-left: 3rem; font-weight: 500;">Welcome back, {{ profile.get('name', session.get('user', 'Guest')) }}! ✨</p>
+                </div>
+                <div class="header-actions">
+                    <div class="profile-icon" onclick="openProfileModal()" title="View Profile & History">
+                        {{ profile.get('name', 'G')[0] | upper }}
+                    </div>
+                </div>
+            </header>
+
+            <div id="dashboard-content">
+
+            <!-- Upload Section -->
+            <section id="upload-section" class="upload-section glass" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="dragLeaveHandler(event);">
+                <i class="fa-solid fa-cloud-arrow-up" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <h2>Upload Healthcare Dataset</h2>
+                <p>Drag and drop CSV or Excel files here, or click to browse.</p>
+                <label class="custom-file-upload">
+                    <input type="file" id="fileInput" accept=".csv, .xlsx" onchange="handleFileUpload()">
+                    Browse Files
+                </label>
+                <div id="upload-info" style="margin-top: 10px; font-weight: 500; color: var(--success);"></div>
+            </section>
+
+            <!-- Metrics Cards -->
+            <div class="metrics-grid">
+                <div class="metric-card glass">
+                    <h3>Total Patients</h3>
+                    <div class="value" id="val-patients">-</div>
+                </div>
+                <div class="metric-card glass">
+                    <h3>Features (Columns)</h3>
+                    <div class="value" id="val-features">-</div>
+                </div>
+                <div class="metric-card glass">
+                    <h3>Model Accuracy</h3>
+                    <div class="value" id="val-accuracy">-</div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons glass" style="padding: 1.5rem; margin-bottom: 2rem;">
+                <button class="btn" onclick="processData()"><i class="fa-solid fa-broom"></i> Clean & Preprocess Data</button>
+                <button class="btn" onclick="trainModel()"><i class="fa-solid fa-brain"></i> Train ML Model</button>
+                <button class="btn" onclick="loadCharts()"><i class="fa-solid fa-chart-bar"></i> Generate Visualizations</button>
+            </div>
+
+            <!-- Charts Section -->
+            <section id="charts-section">
+                <h2 style="margin-bottom: 1rem; color: var(--primary);">Data Visualizations</h2>
+                
+                <div class="glass" style="padding: 1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                    <label for="col-select" style="font-weight: 500;">Visualize Column:</label>
+                    <select id="col-select" class="form-control" style="padding: 0.5rem; border-radius: 6px; border: 1px solid #ccc; flex: 1;">
+                        <option value="">Upload data to see columns...</option>
+                    </select>
+                    <button class="btn" style="width: auto;" onclick="visualizeSpecificColumn()">Visualize</button>
+                </div>
+
+                <div class="charts-grid" id="charts-container">
+                    <!-- Charts will be injected here -->
+                    <div class="chart-container glass" style="display: flex; justify-content: center; align-items: center; color: var(--text-muted);">
+                        No data to visualize. Please upload and process a dataset.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chatbot Section -->
+            <section id="chat-section" class="chatbot-section glass">
+                <h2 style="margin-bottom: 1rem; color: var(--primary);"><i class="fa-solid fa-robot"></i> AI Data Assistant</h2>
+                <p style="margin-bottom: 1rem; color: var(--text-muted);">Ask questions about your data in plain English. e.g., "Count patients with diabetes", "Average age", "Patients above age 60".</p>
+                
+                <div class="chat-box" id="chat-box">
+                    <div class="chat-message bot">Hello! I am your AI assistant. Upload a dataset and ask me anything about it.</div>
+                    <!-- Typing indicator will be injected dynamically -->
+                </div>
+                
+                <div class="chat-input-group">
+                    <input type="text" id="chat-input" placeholder="Type your question here..." onkeypress="handleChatKeyPress(event)">
+                    <button class="btn" onclick="sendQuery()"><i class="fa-solid fa-paper-plane"></i> Ask</button>
+                </div>
+            </section>
+            </div><!-- End Dashboard Content -->
+
+            <!-- Past Records Content -->
+            <div id="records-content" style="display: none;">
+                <h2 style="margin-bottom: 1.5rem; color: var(--primary);"><i class="fa-solid fa-clock-rotate-left"></i> Past Medical Records</h2>
+                <div id="records-list" class="records-grid">
+                    <!-- Records will be injected here -->
+                    <div class="glass" style="padding: 2rem; text-align: center; color: var(--text-muted);">
+                        Loading your medical history...
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Profile & History Modal -->
+    <div class="modal-overlay" id="profile-modal" onclick="closeProfileModal(event)">
+        <div class="profile-modal glass" onclick="event.stopPropagation()">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2 style="color: var(--primary);"><i class="fa-solid fa-id-card"></i> Patient Profile</h2>
+                <button onclick="closeProfileModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);">&times;</button>
+            </div>
+            
+            <div class="profile-info-grid">
+                <div class="info-item">
+                    <label>Full Name</label>
+                    <p>{{ profile.get('name', 'N/A') }}</p>
+                </div>
+                <div class="info-item">
+                    <label>Age</label>
+                    <p>{{ profile.get('age', 'N/A') }}</p>
+                </div>
+                <div class="info-item">
+                    <label>Gender</label>
+                    <p>{{ profile.get('gender', 'N/A') }}</p>
+                </div>
+                <div class="info-item">
+                    <label>Blood Type</label>
+                    <p><span class="badge">{{ profile.get('blood_type', 'N/A') }}</span></p>
+                </div>
+                <div class="info-item full-width">
+                    <label>Occupation</label>
+                    <p>{{ profile.get('occupation', 'N/A') }}</p>
+                </div>
+                <div class="info-item full-width">
+                    <label>Email</label>
+                    <p>{{ profile.get('email', 'N/A') }}</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 1.5rem;">
+                <a href="/profile" class="btn" style="flex: 1; text-decoration: none; text-align: center; display: flex; align-items: center; justify-content: center; gap: 5px;">
+                    <i class="fa-solid fa-user-pen"></i> Edit Profile
+                </a>
+                <button class="btn" onclick="toggleHistory()" style="flex: 1; background: var(--background); color: var(--primary); border: 1px solid var(--primary);">
+                    <i class="fa-solid fa-message"></i> View Chat History
+                </button>
+            </div>
+
+            <div id="history-section" style="display: none; margin-top: 1.5rem; border-top: 1px solid #eee; pt: 1rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--text-muted); font-size: 1rem;">💬 Recent Inquiries</h3>
+                <div class="history-list" id="history-list">
+                    <!-- History items will be injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+{
+    "nupur": {
+        "password": "scrypt:32768:8:1$EeNSNzbi516K9axT$8c209658d54e4b045165b785c6d84479225741a7c99d918dd6462d251beb31f778e1a1afba761f770aa0a5e21d49fd8389f1e6607b005d3c152489fa2fe541d0",
+        "history": [
+            {
+                "query": "give summary of dataset",
+                "time": "2026-04-23 13:21:25"
+            }
+        ],
+        "profile": {
+            "name": "Nupur",
+            "age": "19",
+            "gender": "Female",
+            "blood_type": "A+",
+            "occupation": "Student ",
+            "email": "nupoorgaikwad279@gmail.com"
+        }
+    },
+    "testuser": {
+        "password": "scrypt:32768:8:1$jgjodL9tvKVmfVVP$bc85606e025300ee1b2b7758ada09ed658fde9da9540ad481946c14e7a2133c9a7e15bbd4e5745b56d4f01b1d23ccd3f95370687907ef65fdd10a672eea5ce15",
+        "history": [],
+        "profile": {
+            "name": "Test Patient",
+            "age": "30",
+            "gender": "Male",
+            "blood_type": "A+",
+            "occupation": "Tester",
+            "email": "test@example.com"
+        },
+        "records": []
+    },
+    "NUPUR GAIKWAD": {
+        "password": "scrypt:32768:8:1$3h9v0rHoAK4KcUcm$af0a34b8ef3a326e0c1ac101ef98205b83cdc13e50915561594a781488398ba33aac622d90d6fc33d24483cb642b62891bca60c8d1255a48c16a69a35678d37d",
+        "history": [
+            {
+                "query": "give me summary",
+                "time": "2026-04-25 02:10:28"
+            },
+            {
+                "query": "give me a summary",
+                "time": "2026-04-30 15:33:15"
+            }
+        ],
+        "profile": {
+            "name": "Nupur Gaikwad",
+            "age": "19",
+            "gender": "Female",
+            "blood_type": "A+",
+            "occupation": "Student",
+            "email": "nupoorgaikwad279@gmail.com"
+        },
+        "records": [
+            {
+                "date": "2026-04-25",
+                "name": "hospital data analysis.csv",
+                "summary": "Dataset with 984 rows uploaded."
+            },
+            {
+                "date": "2026-04-30",
+                "name": "hospital data analysis.csv",
+                "summary": "Dataset with 984 rows uploaded."
+            }
+        ]
+    },
+    "MonaliGaikwad": {
+        "password": "scrypt:32768:8:1$SYp6zR1N74zC6rOE$e111a5ed6c12bb01b9fa067da7d86d1a51650a5fc7cf7ea094d41f6eee3a0e30215dd5999d04c97335d52608bdfdd61c1f4b1bc7278fd2ed659a982fcf8746a8",
+        "history": [
+            {
+                "query": "give me summary of the report",
+                "time": "2026-04-24 16:33:10"
+            }
+        ],
+        "profile": {
+            "name": "monali",
+            "age": "40",
+            "gender": "Female",
+            "blood_type": "A+",
+            "occupation": "business",
+            "email": "monaligaikwad893@gmail.com"
+        },
+        "records": [
+            {
+                "date": "2026-04-24",
+                "name": "hospital data analysis.csv",
+                "summary": "Dataset with 984 rows uploaded."
+            }
+        ]
+    },
+    "Tanvi ": {
+        "password": "scrypt:32768:8:1$wHtxGkc41yfl05zO$fe3a9a6dd7028ee8621b29e6a806a4c2fd27367c16330c31abeba3f7c1853a7aec68a239b61156c85922f05397eb944f836fc6581f583c42f7909b4e86ef9eab",
+        "history": [],
+        "profile": {
+            "name": "Tanvi Sangle",
+            "age": "18",
+            "gender": "Female",
+            "blood_type": "O+",
+            "occupation": "Student",
+            "email": "tanvisangle14@gmail.com"
+        },
+        "records": [
+            {
+                "date": "2026-04-27",
+                "name": "hospital data analysis.csv",
+                "summary": "Dataset with 984 rows uploaded."
+            }
+        ]
+    }
+}

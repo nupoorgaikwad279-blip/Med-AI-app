@@ -1,0 +1,27 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="55" fill="url(#grad)" />
+
+  <!-- Gradient -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00bcd4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4caf50;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Medical Cross -->
+  <rect x="50" y="30" width="20" height="60" fill="white"/>
+  <rect x="30" y="50" width="60" height="20" fill="white"/>
+
+  <!-- Heart Shape -->
+  <path d="M60 85 
+           C 50 75, 35 70, 35 55 
+           C 35 45, 45 40, 55 45 
+           C 60 50, 60 50, 65 45 
+           C 75 40, 85 45, 85 55 
+           C 85 70, 70 75, 60 85 Z"
+        fill="#ff4d6d"/>
+
+</svg>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedAI HealthCare Analytics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0077b6">
+    <style>
+        .forms-wrapper {
+            display: flex;
+            width: 200%;
+            transition: transform 0.4s ease-in-out;
+        }
+        .form-panel {
+            width: 50%;
+            padding: 0 1rem;
+        }
+        .login-card {
+            overflow: hidden;
+            padding: 2rem;
+        }
+        .show-signup .forms-wrapper {
+            transform: translateX(-50%);
+        }
+        .toggle-link {
+            color: var(--primary);
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 0.9em;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+        .qr-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        .qr-code {
+            max-width: 150px;
+            border-radius: 8px;
+            margin: 10px auto 0;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card glass {% if show_signup %}show-signup{% endif %}" id="card-container">
+            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 1.5rem;">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 1rem;">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logo-grad)" stroke-width="5" />
+                    <path d="M50 25 V75 M35 50 H65" stroke="url(#logo-grad)" stroke-width="10" stroke-linecap="round" />
+                    <path d="M25 50 L40 50 L45 30 L55 70 L60 50 L75 50" fill="none" stroke="var(--primary-light)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="2s" repeatCount="indefinite" />
+                    </path>
+                    <defs>
+                        <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:var(--primary);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:var(--secondary);stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h2 style="margin-bottom: 0.2rem; background: var(--gradient-premium); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">MedAI Analytics</h2>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Intelligent Healthcare Systems</p>
+            </div>
+            
+            {% if error %}
+            <div style="color: var(--danger); margin-bottom: 15px; font-size: 0.9em;">
+                {{ error }}
+            </div>
+            {% endif %}
+            {% if success %}
+            <div style="color: var(--success); margin-bottom: 15px; font-size: 0.9em;">
+                {{ success }}
+            </div>
+            {% endif %}
+
+            <div class="forms-wrapper">
+                <!-- Login Form -->
+                <div class="form-panel">
+                    <form action="/" method="POST">
+                        <div class="input-group">
+                            <label for="login-user">Username/Email</label>
+                            <input type="text" id="login-user" name="username" placeholder="Enter username" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="login-pwd">Password</label>
+                            <input type="password" id="login-pwd" name="password" placeholder="Enter password" required>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                    </form>
+                    <span class="toggle-link" onclick="document.getElementById('card-container').classList.add('show-signup')">Don't have an account? Sign Up</span>
+                </div>
+
+                <!-- Sign Up Form -->
+                <div class="form-panel">
+                    <form action="/signup" method="POST">
+                        <div class="input-group">
+                            <label for="signup-user">New Username</label>
+                            <input type="text" id="signup-user" name="username" placeholder="Create username" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="signup-pwd">New Password</label>
+                            <input type="password" id="signup-pwd" name="password" placeholder="Create password" required>
+                        </div>
+                        <button type="submit" class="btn" style="background: linear-gradient(135deg, var(--success), #20b2aa);">Create Account</button>
+                    </form>
+                    <span class="toggle-link" onclick="document.getElementById('card-container').classList.remove('show-signup')">Already have an account? Login</span>
+                </div>
+            </div>
+
+            {% if qr_exists %}
+            <div class="qr-section">
+                <p style="font-size: 0.85em; color: var(--primary-light); font-weight: 700;">📱 Mobile Access</p>
+                <p style="font-size: 0.75em; color: var(--text-muted); margin-bottom: 5px;">Scan to open on your phone</p>
+                <img src="{{ url_for('static', filename='qrcode.png') }}" class="qr-code" alt="Mobile Access QR Code">
+                
+                <div style="margin-top: 15px; text-align: left; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; border: 1px solid var(--glass-border);">
+                    <p style="font-size: 0.65rem; color: var(--text-muted); line-height: 1.4;">
+                        <strong>Can't connect?</strong><br>
+                        • Ensure phone & PC are on the same WiFi.<br>
+                        • Use Chrome or Safari on your phone.<br>
+                        • Verify your PC's firewall allows Port 5000.
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+            
+        </div>
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+</html>
